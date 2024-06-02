@@ -9,8 +9,6 @@ from __future__ import print_function
 import os
 import torch
 import torch.optim as optim
-import prettytable as pt
-
 from networks import DeepSurv
 from networks import NegativeLogLikelihood
 from datasets import SurvivalDataset
@@ -18,6 +16,7 @@ from utils import read_config
 from utils import c_index
 from utils import adjust_learning_rate
 from utils import create_logger
+import pandas as pd
 
 def train(ini_file):
     ''' Performs training according to .ini file
@@ -51,7 +50,7 @@ def train(ini_file):
         model.train()
         for X, y, e in train_loader:
             # makes predictions
-            risk_pred = model(X)
+            risk_pred, layer_outputs = model(X)
             train_loss = criterion(risk_pred, y, e, model)
             train_c = c_index(-risk_pred, y, e)
             # updates parameters
@@ -63,7 +62,7 @@ def train(ini_file):
         for X, y, e in test_loader:
             # makes predictions
             with torch.no_grad():
-                risk_pred = model(X)
+                risk_pred, layer_outputs = model(X)
                 valid_loss = criterion(risk_pred, y, e, model)
                 valid_c = c_index(-risk_pred, y, e)
                 if best_c_index < valid_c:
@@ -93,28 +92,34 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     configs_dir = 'configs'
     params = [
-        ('Simulated Linear', 'linear.ini'),
-        ('Simulated Nonlinear', 'gaussian.ini'),
-        ('WHAS', 'whas.ini'),
-        ('SUPPORT', 'support.ini'),
-        ('METABRIC', 'metabric.ini'),
-        ('Simulated Treatment', 'treatment.ini'),
-        ('Rotterdam & GBSG', 'gbsg.ini')]
+        ('Cell Types', 'X_cell_type_er_pos.ini'),
+        ('Cell Types With Cell Interactions', 'X_cell_type_interaction_er_pos.ini')]
+        # ('WHAS', 'whas.ini'),
+        # ('SUPPORT', 'support.ini'),
+        # ('METABRIC', 'metabric.ini'),
+        # ('Simulated Treatment', 'treatment.ini'),
+        # ('Rotterdam & GBSG', 'gbsg.ini')]
     patience = 50
     # training
     headers = []
     values = []
     for name, ini_file in params:
         logger.info('Running {}({})...'.format(name, ini_file))
-        best_c_index = train(os.path.join(configs_dir, ini_file))
-        headers.append(name)
-        values.append('{:.6f}'.format(best_c_index))
-        print('')
-        logger.info("The best valid c-index: {}".format(best_c_index))
-        logger.info('')
-    # prints results
-    tb = pt.PrettyTable()
-    tb.field_names = headers
-    tb.add_row(values)
-    logger.info(tb)
+        for i in range(10):
+            best_c_index = train(os.path.join(configs_dir, ini_file))
+            logger.info("The best valid c-index: {}".format(best_c_index))
+            headers.append(name)
+            values.append('{:.6f}'.format(best_c_index))
+
+    result = {
+        "Group" : headers,
+        "C_index": values
+    }
+
+    df = pd.DataFrame(result)
+    df.to_csv('deepsurv_results.csv', index=False)
+
+
+
+
 

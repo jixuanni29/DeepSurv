@@ -27,7 +27,7 @@ class SurvivalDataset(Dataset):
         self.X, self.e, self.y = \
             self._read_h5_file(h5_file, is_train)
         # normalizes data
-        self._normalize()
+        # self._normalize()
 
         print('=> load {} samples'.format(self.X.shape[0]))
 
@@ -43,9 +43,13 @@ class SurvivalDataset(Dataset):
         '''
         split = 'train' if is_train else 'test'
         with h5py.File(h5_file, 'r') as f:
-            X = f[split]['x'][()]
-            e = f[split]['e'][()].reshape(-1, 1)
-            y = f[split]['t'][()].reshape(-1, 1)
+            temp = f[split]
+            X = f[split]['x'][()].astype(np.float32)
+            e = f[split]['e'][()].reshape(-1, 1).astype(np.int32)
+            y = f[split]['t'][()].reshape(-1, 1).astype(np.float32)
+            nan_positions1 = np.sum(np.isnan(e))
+            nan_positions2 = np.sum(np.isnan(X))
+            nan_position3 = np.sum(np.isnan(y))
         return X, e, y
 
     def _normalize(self):

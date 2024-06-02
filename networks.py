@@ -61,7 +61,11 @@ class DeepSurv(nn.Module):
         return nn.Sequential(*layers)
 
     def forward(self, X):
-        return self.model(X)
+        layer_outputs = []
+        for layer in self.model:
+            X = layer(X)
+            layer_outputs.append(X)
+        return X, layer_outputs
 
 class NegativeLogLikelihood(nn.Module):
     def __init__(self, config):

@@ -1,0 +1,22 @@
+2024-06-01 23:14:32,078 - utils - INFO - Running Cell Types(X_cell_type_er_pos.ini)...
+2024-06-01 23:14:34,012 - utils - INFO - The best valid c-index: 0.6696472925981123
+2024-06-01 23:14:35,665 - utils - INFO - The best valid c-index: 0.5663189269746647
+2024-06-01 23:14:36,375 - utils - INFO - The best valid c-index: 0.5245901639344263
+2024-06-01 23:14:38,357 - utils - INFO - The best valid c-index: 0.5861897665176353
+2024-06-01 23:14:39,909 - utils - INFO - The best valid c-index: 0.611525086934923
+2024-06-01 23:14:42,719 - utils - INFO - The best valid c-index: 0.6000993541977149
+2024-06-01 23:14:45,996 - utils - INFO - The best valid c-index: 0.5901639344262295
+2024-06-01 23:14:47,330 - utils - INFO - The best valid c-index: 0.6110283159463488
+2024-06-01 23:14:48,526 - utils - INFO - The best valid c-index: 0.5717834078489816
+2024-06-01 23:14:49,804 - utils - INFO - The best valid c-index: 0.6030799801291604
+2024-06-01 23:14:49,804 - utils - INFO - Running Cell Types With Cell Interactions(X_cell_type_interaction_er_pos.ini)...
+2024-06-01 23:14:51,747 - utils - INFO - The best valid c-index: 0.6378539493293591
+2024-06-01 23:14:55,031 - utils - INFO - The best valid c-index: 0.6249379036264282
+2024-06-01 23:14:56,493 - utils - INFO - The best valid c-index: 0.6100347739692003
+2024-06-01 23:14:57,791 - utils - INFO - The best valid c-index: 0.6646795827123696
+2024-06-01 23:15:00,144 - utils - INFO - The best valid c-index: 0.6259314456035767
+2024-06-01 23:15:01,322 - utils - INFO - The best valid c-index: 0.6179831097863885
+2024-06-01 23:15:03,106 - utils - INFO - The best valid c-index: 0.620963735717834
+2024-06-01 23:15:04,871 - utils - INFO - The best valid c-index: 0.6130153999006458
+2024-06-01 23:15:06,297 - utils - INFO - The best valid c-index: 0.6269249875807252
+2024-06-01 23:15:07,706 - utils - INFO - The best valid c-index: 0.6348733233979136

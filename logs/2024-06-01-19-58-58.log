@@ -1,0 +1,8 @@
+2024-06-01 19:58:58,993 - utils - INFO - Running Simulated Nonlinear(gaussian.ini)...
+2024-06-01 19:59:00,811 - utils - INFO - The best valid c-index: 0.6020864381520119
+2024-06-01 19:59:00,811 - utils - INFO - 
+2024-06-01 19:59:00,812 - utils - INFO - +---------------------+
+| Simulated Nonlinear |
++---------------------+
+|       0.602086      |
++---------------------+

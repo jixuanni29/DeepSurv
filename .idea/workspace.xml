@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bd1b4415-3598-4904-9df2-6276eacee538" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DeepSurv.pytorch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DeepSurv.pytorch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/gaussian.ini" beforeDir="false" afterPath="$PROJECT_DIR$/configs/X_cell_type_interaction_er_pos.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/gbsg.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/linear.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/metabric.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/support.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/treatment.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/whas.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gaussian/gaussian_survival_data.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/gbsg/gbsg_cancer_train_test.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/linear/linear_survival_data.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/linear/logs/tensorboard_/shared/data/linear_survival_data.h5_320635bd-e6f6-49f9-ba02-2d2aba6d25d2/events.out.tfevents.1501950449.ebe916c018ac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/linear/logs/tensorboard_/shared/data/linear_survival_data.h5_88d7b4e3-5a3b-4380-8b22-7c7a4b0aa1ee/events.out.tfevents.1501951016.152ea285d90e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/linear/logs/tensorboard_/shared/data/linear_survival_data.h5_e215d084-3302-4248-939d-f5e43cfe63b5/events.out.tfevents.1501950494.152ea285d90e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/linear/logs/tensorboard_/shared/data/linear_survival_data.h5_ea209c15-00d7-4a57-8fc8-046e08038eba/events.out.tfevents.1501950372.411602be3a6f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/metabric/metabric_IHC4_clinical_train_test.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/support/logs/tensorboard_/shared/data/support_train_test.h5_b1f908ae-d03c-4f7c-aab9-ae01ac9d31f7/events.out.tfevents.1501953943.cd9ea224808d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/support/logs/tensorboard_/shared/data/support_train_test.h5_df8bcb48-c77e-46f8-b33c-112cb940a285/events.out.tfevents.1501954035.bf1b5f1da709" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/support/support_train_test.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/treatment/sim_treatment_dataset.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/whas/whas_train_test.h5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/networks.py" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,28 +47,37 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="1TKFByhaonr4UjQaPjDvO4F3mxv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/DeepSurv.pytorch",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager" selected="Python.main">
     <configuration name="datasets" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DeepSurv.pytorch" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -52,6 +88,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/datasets.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -63,6 +100,7 @@
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DeepSurv.pytorch" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -73,6 +111,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -84,6 +123,7 @@
     </configuration>
     <configuration name="networks" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DeepSurv.pytorch" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -94,6 +134,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/networks.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -105,6 +146,7 @@
     </configuration>
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DeepSurv.pytorch" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -115,6 +157,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -133,6 +176,14 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-09665e90c3a7-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.15026.15" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -143,8 +194,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573200749012</updated>
+      <workItem from="1717284557218" duration="8855000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.ini" />
@@ -160,5 +215,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="f.attrs._MutableMapping__marker" />
+        <watch expression="y" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DeepSurv_pytorch$main.coverage" NAME="main Coverage Results" MODIFIED="1717302076241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
