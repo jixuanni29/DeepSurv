@@ -92,28 +92,29 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     configs_dir = 'configs'
     params = [
-        ('Cell Types', 'X_cell_type_er_pos.ini'),
-        ('Cell Types With Cell Interactions', 'X_cell_type_interaction_er_pos.ini')]
+        ('TLS', 'x_TLS.ini'),
+        ('CAF', 'x_CAF.ini'),
+        ('CAF + TLS', 'x_CAF_TLS.ini')]
         # ('WHAS', 'whas.ini'),
         # ('SUPPORT', 'support.ini'),
         # ('METABRIC', 'metabric.ini'),
         # ('Simulated Treatment', 'treatment.ini'),
         # ('Rotterdam & GBSG', 'gbsg.ini')]
-    patience = 50
+    patience = 100
     # training
     headers = []
     values = []
     for name, ini_file in params:
         logger.info('Running {}({})...'.format(name, ini_file))
-        for i in range(10):
+        for i in range(20):
             best_c_index = train(os.path.join(configs_dir, ini_file))
             logger.info("The best valid c-index: {}".format(best_c_index))
             headers.append(name)
             values.append('{:.6f}'.format(best_c_index))
 
     result = {
-        "Group" : headers,
-        "C_index": values
+        "Model" : headers,
+        "C-index": values
     }
 
     df = pd.DataFrame(result)
