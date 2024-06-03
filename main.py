@@ -113,7 +113,7 @@ if __name__ == '__main__':
         logger.info('Running {}({})...'.format(name, ini_file))
         for i in range(20):
             best_c_index = train(os.path.join(configs_dir, ini_file))
-            logger.info("The best valid c-index: {}".format(best_c_index))
+            logger.info("The best training c-index: {}".format(best_c_index))
             headers.append(name)
             values.append('{:.6f}'.format(best_c_index))
 
