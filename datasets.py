@@ -41,7 +41,8 @@ class SurvivalDataset(Dataset):
         :return y: (np.array) (n, 1)
             the time of event e.
         '''
-        split = 'train' if is_train else 'test'
+        # split = 'train' if is_train else 'test'
+        split = "data"
         with h5py.File(h5_file, 'r') as f:
             temp = f[split]
             X = f[split]['x'][()].astype(np.float32)

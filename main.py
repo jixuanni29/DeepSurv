@@ -17,6 +17,7 @@ from utils import c_index
 from utils import adjust_learning_rate
 from utils import create_logger
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 def train(ini_file):
     ''' Performs training according to .ini file
@@ -32,8 +33,9 @@ def train(ini_file):
     optimizer = eval('optim.{}'.format(config['train']['optimizer']))(
         model.parameters(), lr=config['train']['learning_rate'])
     # constructs data loaders based on configuration
-    train_dataset = SurvivalDataset(config['train']['h5_file'], is_train=True)
-    test_dataset = SurvivalDataset(config['train']['h5_file'], is_train=False)
+    dataset = SurvivalDataset(config['train']['h5_file'], is_train=True)
+    train_dataset, test_dataset = train_test_split(dataset, test_size=0.1, )
+    # test_dataset = SurvivalDataset(config['train']['h5_file'], is_train=False)
     train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size=train_dataset.__len__())
     test_loader = torch.utils.data.DataLoader(
@@ -53,6 +55,9 @@ def train(ini_file):
             risk_pred, layer_outputs = model(X)
             train_loss = criterion(risk_pred, y, e, model)
             train_c = c_index(-risk_pred, y, e)
+            if best_c_index < train_c:
+                best_c_index = train_c
+
             # updates parameters
             optimizer.zero_grad()
             train_loss.backward()
@@ -65,18 +70,18 @@ def train(ini_file):
                 risk_pred, layer_outputs = model(X)
                 valid_loss = criterion(risk_pred, y, e, model)
                 valid_c = c_index(-risk_pred, y, e)
-                if best_c_index < valid_c:
-                    best_c_index = valid_c
-                    flag = 0
-                    # saves the best model
-                    torch.save({
-                        'model': model.state_dict(),
-                        'optimizer': optimizer.state_dict(),
-                        'epoch': epoch}, os.path.join(models_dir, ini_file.split('\\')[-1]+'.pth'))
-                else:
-                    flag += 1
-                    if flag >= patience:
-                        return best_c_index
+                # if best_c_index < valid_c:
+                #     best_c_index = valid_c
+                #     flag = 0
+                #     # saves the best model
+                #     torch.save({
+                #         'model': model.state_dict(),
+                #         'optimizer': optimizer.state_dict(),
+                #         'epoch': epoch}, os.path.join(models_dir, ini_file.split('\\')[-1]+'.pth'))
+                # else:
+                #     flag += 1
+                #     if flag >= patience:
+                #         return best_c_index
         # notes that, train loader and valid loader both have one batch!!!
         print('\rEpoch: {}\tLoss: {:.8f}({:.8f})\tc-index: {:.8f}({:.8f})\tlr: {:g}'.format(
             epoch, train_loss.item(), valid_loss.item(), train_c, valid_c, lr), end='', flush=False)
@@ -114,7 +119,7 @@ if __name__ == '__main__':
 
     result = {
         "Model" : headers,
-        "C-index": values
+        "C_index": values
     }
 
     df = pd.DataFrame(result)
