@@ -19,7 +19,7 @@ from utils import create_logger
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-def train(ini_file):
+def train(ini_file, seed):
     ''' Performs training according to .ini file
 
     :param ini_file: (String) the path of .ini file
@@ -34,7 +34,7 @@ def train(ini_file):
         model.parameters(), lr=config['train']['learning_rate'])
     # constructs data loaders based on configuration
     dataset = SurvivalDataset(config['train']['h5_file'], is_train=True)
-    train_dataset, test_dataset = train_test_split(dataset, test_size=0.1, )
+    train_dataset, test_dataset = train_test_split(dataset, test_size=0.1, random_state=seed)
     # test_dataset = SurvivalDataset(config['train']['h5_file'], is_train=False)
     train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size=train_dataset.__len__())
@@ -112,7 +112,7 @@ if __name__ == '__main__':
     for name, ini_file in params:
         logger.info('Running {}({})...'.format(name, ini_file))
         for i in range(20):
-            best_c_index = train(os.path.join(configs_dir, ini_file))
+            best_c_index = train(os.path.join(configs_dir, ini_file), i)
             logger.info("The best training c-index: {}".format(best_c_index))
             headers.append(name)
             values.append('{:.6f}'.format(best_c_index))
