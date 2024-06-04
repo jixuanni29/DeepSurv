@@ -97,13 +97,13 @@ if __name__ == '__main__':
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     configs_dir = 'configs'
     params = [
-        ('TLS', 'x_TLS.ini'),
-        ('CAF', 'x_CAF.ini'),
-        ('CAF + TLS', 'x_CAF_TLS.ini')]
-        # ('WHAS', 'whas.ini'),
-        # ('SUPPORT', 'support.ini'),
-        # ('METABRIC', 'metabric.ini'),
-        # ('Simulated Treatment', 'treatment.ini'),
+        ('TLS', 'TLS.ini'),
+        ('CAF', 'CAF.ini'),
+        ('CAF + TLS', 'CAF_TLS.ini'),
+        ('Cell Type ', 'Cell_type.ini'),
+        ('Cell Type + TLS', 'Cell_type_TLS.ini'),
+        ('Cell Type + CAF', 'Cell_type_CAF.ini'),
+        ('Cell Type + CAF + TLS', 'Cell_type_CAF_TLS.ini')]
         # ('Rotterdam & GBSG', 'gbsg.ini')]
     patience = 100
     # training
